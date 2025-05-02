@@ -19,7 +19,7 @@ public class AndrewWebServicesTest {
 
    @Before
     public void setUp() {
-        database = new InMemoryDatabase();  // Use the fake
+        database = new InMemoryDatabase();
         recommender = mock(RecSys.class);
         promoService = mock(PromoService.class);
 
@@ -44,7 +44,9 @@ public class AndrewWebServicesTest {
     public void testSendEmail() {
         // How should we test sendEmail() when it doesn't have a return value?
         // Hint: is there something from Mockito that seems useful here?
-
+        String testEmail = "test@example.com";
+        andrewWebService.sendPromoEmail(testEmail);
+        verify(promoService).mailTo(testEmail);
     }
 
     @Test

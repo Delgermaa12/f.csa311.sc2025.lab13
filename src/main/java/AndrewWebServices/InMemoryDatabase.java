@@ -10,7 +10,6 @@ package AndrewWebServices;
 public class InMemoryDatabase extends Database {
     @Override
     public int getPassword(String accountName) {
-        // No delay here
         if (accountName.equals("Scotty")) {
             return 17214;
         } else {
